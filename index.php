@@ -10,7 +10,7 @@
     $sas_expiry_d = $datetime->format(DateTime::ISO8601);
     $sas_expiry_d = substr($sas_expiry_d, 0, strpos($sas_expiry_d, "+"));
     $sas_expiry_d = $sas_expiry_d."Z";
-    $sas_data = '{"canonicalizedResource":"'.$can_blob.'","signedResource":"cb","signedPermission":"'.$perms.'","signedProtocol":"https","signedExpiry":"'.$sas_expiry_d.'"}';
+    $sas_data = '{"canonicalizedResource":"'.$can_blob.'","signedResource":"c","signedPermission":"'.$perms.'","signedProtocol":"https","signedExpiry":"'.$sas_expiry_d.'"}';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$sasurl);
     curl_setopt($ch, CURLOPT_POST, 1);
@@ -100,7 +100,7 @@ $ipdat = @json_decode(file_get_contents(
 
       <div class="col-md-6 offset-md-3 mt-5">
               <a target="_blank" href="https://www.zscaler.com">
-                <img src='zscaler-logo.svg' style="width:100px;height:100px;">
+                <img src='attack.png' style="width:100px;height:100px;">
               </a>
               <br>
               <h1><a target="_blank" href="https://www.zscaler.com" class="mt-3 d-flex">Generate SaS Token from IMDS</a></h1>
